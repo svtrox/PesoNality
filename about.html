@@ -1,92 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About & Contact</title>
-    <style>
-        /* Navigation bar */
-        body {
-            margin: 0;
-        }
+     <title>About & Contact | PesoNality</title>
+     <style>
+
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 6%;
-            background-color: #ffffff;
-            border-radius: 10px 10px 0 0;
-            font-family: Arial;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 6%;
+        background-color: white;
+        font-family: Arial, sans-serif;
         }
 
-        .navbar a {
-            display: block;
-            color: #252525;
-            text-decoration: none;
-        }
-
-        .navbar .logo {
-            font-size: 20px;
-            font-weight: bold;
+        .navbar img {
+        width: 50px;
+        height: 50px;
         }
 
         .navbar ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
+        display: flex;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
         }
 
-        .navbar li a {
-            padding: 12px 14px;
-            font-size: 15px;
+        .navbar a {
+        color: #252525;
+        text-decoration: none;
+        padding: 12px 14px;
+        font-size: 15px;
         }
 
-        .navbar li a:hover,
-        .navbar li a:focus-visible {
-            background-color: #f2f2f2;
+        .container {
+        background-color: #fafaf0;
+        border: 2px solid rgb(195, 191, 191);
+        padding: 40px;
+        border-radius: 25px;
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
         }
 
-        .hero {
+        main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 7%;
+        color: #173f44;
+        font-family: Arial, sans-serif;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        h1 {
             text-align: center;
-            padding: 30px 5%;
+            font-size: 44px;
+            margin-bottom: 70px;
         }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            color: #314548;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 45px;
+            text-align: center;
+        }
+
+        .team {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px 45px;
+        }
+
+        .member {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+
+        .member img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            background-color: #f6dce6;
+        }
+
+        .member h3 {
+            color: #b84c34;
+            font-size: 22px;
+            margin: 5px 0 6px;
+        }
+
+        .role {
+            color: #314548;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .personality {
+            color: #777;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 13px;
+            margin-top: 14px;
+        }
+
+
+        @media (max-width: 800px) {
+
+            .team {
+                grid-template-columns: 1fr;
+            }
+
+            .member {
+                grid-template-columns: 160px 1fr;
+            }
+
+            .member img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .navbar ul {
+                gap: 3px;
+            }
+
+            .navbar a {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .member {
+                display: block;
+            }
+
+            .member img {
+                width: 150px;
+                height: 150px;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
     </style>
 </head>
+
+
 <body>
-    <!-- Header part -->
     <header>
-        <nav class="navbar" aria-label="Main navigation">
-            <img src="imgs/Logo.png" alt="Da logo" width="50" height="50">
+
+    <nav class="navbar">
+
+           <img src="imgs/Logo.png" alt="Da logo" width="50" height="50">
+
             <ul>
+
                 <li><a href="index.html">Home</a></li>
-                <li><a href="budgetguides.html" aria-current="page">Budget Guides</a></li>
+                <li><a href="budgetguides.html">Budget Guides</a></li>
                 <li><a href="about.html">About & Contact</a></li>
             </ul>
+
         </nav>
-    </header>
+
+ </header>
 
     <main>
-        <! Headline>
-        <section class="hero">
-            <div class="hero-inner">
-                <div class="hero-text">
-                    <h1>About & Contact</h1>
+        <h1>Meet the Team</h1>
+        <p style="font-size: 24px; text-align: center; margin-bottom: auto; font-family: Georgia, 'Times New Roman', Times, serif;">On PesoNality, we think budgeting advice sounds better when it fits how you actually spend.</p>
+
+            <h2>Meet the Team</h2>
+
+        <p>Four Computer Science students from Block 1105 with four different approaches to budgeting.</p>
+
+        <div class="container">
+        <section class="team">
+            <div class="member">
+
+                <img src="" alt="Member Name 1">
+                <div>
+                    <h3>Jon Aldrich Laredo</h3>
+                    <p class="role">Content Writer & Planner</p>
+                    <p class="personality">"Mahilig kumain"</p>
+                </div>
+
+            </div>
+
+            <div class="member">
+                <img src="" alt="Member Name 2">
+                <div>
+                    <h3>Portia Alaina Sebastian</h3>
+                    <p class="role">Developer & Spender</p>
+                    <p class="personality">"Mahilig gumastos"</p>
+                </div>
+            </div>
+
+            <div class="member">
+                <img src="" alt="Member Name 3">
+                <div>
+                    <h3>Gertrude Sofia Edelweiss Principe</h3>
+                    <p class="role">Designer & Saver</p>
+                    <p class="personality">"Mahilig mag-ipon"</p>
+
+                </div>
+            </div>
+
+            <div class="member">
+                <img src="" alt="Member Name 4">
+                <div>
+                    <h3>Mark Yuri Geraldizo</h3>
+                    <p class="role">Researcher & Impulse Buyer</p>
+                    <p class="personality">"Mahilig mag-checkout"</p>
+
                 </div>
             </div>
         </section>
-        <p>On PesoNality, we think budgeting advice sounds better when it fits how you actually spend.</p>
 
-        <h2>Meet the Team</h2>
-        <p>Four Computer Science students from Block 1105 with four different approaches to budgeting.</p>
-
-        <h3>Member Name 1</h3>
-        <p>Role, e.g. Content Writer</p>
-        <p>Planner</p>
-        <p>"Mahilig kumain"</p>
     </main>
 </body>
 </html>
