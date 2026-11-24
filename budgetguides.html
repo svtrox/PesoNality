@@ -3,9 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Guides</title>
+    <title>Budget Guides | PesoNality</title>
+    <style>
+        /* Navigation bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 6%;
+            background-color: #ffffff;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            font-family: Arial;
+        }
+
+        .navbar a {
+            display: block;
+            color: #252525;
+            text-decoration: none;
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .navbar li a {
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .navbar li a:hover,
+        .navbar li a:focus-visible {
+            background-color: #f2f2f2;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                gap: 8px;
+                padding: 14px 8px 8px;
+            }
+
+            .navbar ul {
+                gap: 2px;
+            }
+
+            .navbar li a {
+                padding: 12px 8px;
+            }
+        }
+
+        /* Homepage content */
+        main {
+            color: #173f44;
+            font-family: Arial, sans-serif;
+        }
+
+        main * {
+            box-sizing: border-box;
+        }
+
+        main h1,
+        main h2,
+        main h3 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        main p {
+            color: #314548;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        /* Pink introduction section */
+        .hero {
+            padding: 48px 7% 0;
+            background-color: #f6dce6;
+            background-image: linear-gradient(
+                to bottom,
+                transparent 84%,
+                #ee7656 84%,
+                #ee7656 90%,
+                #ffffff 90%
+            );
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            align-items: center;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 1;
+            margin-right: -38px;
+            padding: 36px 40px;
+            background-color: #ffffff;
+            border: 1px solid #91cbbf;
+            box-shadow: 6px 6px 0 #b5dcd1;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 4.3vw, 64px);
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+        }
+
+        .hero h1 span {
+            color: #b84c34;
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 48ch;
+            margin: 20px 0 24px;
+        }
+
+        .hero button {
+            padding: 14px 22px;
+            border: 0;
+            background-color: #58bcaa;
+            color: #103c3d;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: #85d3c3;
+        }
+
+        .hero button:focus-visible {
+            outline: 3px solid #173f44;
+            outline-offset: 3px;
+        }
+
+        .hero-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border: 6px solid #ffffff;
+            border-radius: 50%;
+            background-color: #fff2d1;
+        }
+
+        /* Overview section */
+        .overview {
+            padding: 72px 7% 84px;
+            background-color: #ffffff;
+            background-image: radial-gradient(
+                ellipse 180px 85% at left center,
+                #f1cf68 98%,
+                transparent 100%
+            );
+        }
+
+        .overview-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .overview h2 {
+            margin-bottom: 28px;
+            font-size: clamp(36px, 4vw, 54px);
+            letter-spacing: -0.04em;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .overview article {
+            padding: 28px;
+            border-top: 5px solid #eb7658;
+            background-color: #fbe9ef;
+        }
+
+        .overview article:nth-child(2) {
+            border-color: #469e8e;
+            background-color: #e3f2ed;
+        }
+
+        .overview article:nth-child(3) {
+            border-color: #d0a63a;
+            background-color: #fff3d3;
+        }
+
+        .overview h3 {
+            font-size: 26px;
+            line-height: 1.15;
+        }
+
+        .overview p {
+            margin: 12px 0 0;
+        }
+
+        /* Homepage layout for smaller screens */
+        @media (max-width: 760px) {
+            .hero {
+                padding: 28px 6% 0;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .hero-image {
+                grid-column: 1;
+                grid-row: 1;
+                width: min(82%, 320px);
+            }
+
+            .hero-text {
+                width: 100%;
+                max-width: 520px;
+                margin: -24px 0 0;
+                padding: 28px 24px;
+            }
+
+            .overview {
+                padding: 52px 6%;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
+
+    <style>
+        .navbar ul { margin-left: auto; }
+        .guide-intro { display: block; }
+        .guide-intro .hero-text { max-width: 760px; margin: 0 auto; }
+        .guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 28px; }
+        .guide-grid .emoji, .summary .emoji { font-size: 30px; margin: 0 0 8px; }
+        .guide-grid h4 { margin: 20px 0 6px; }
+        .guide-grid ul { padding-left: 20px; margin: 0; line-height: 1.65; color: #314548; }
+        .summary { margin-top: 48px; }
+        .table-wrap { overflow-x: auto; }
+        .summary table { width: 100%; border-collapse: collapse; background-color: white; }
+        .summary th, .summary td { text-align: left; padding: 14px; border-bottom: 1px solid #91cbbf; }
+        .summary th { background-color: #e3f2ed; }
+        @media (max-width: 760px) {
+            .guide-grid { grid-template-columns: 1fr; }
+            .summary th, .summary td { padding: 10px 6px; }
+        }
+        @media (max-width: 600px) {
+            .navbar ul { margin-left: 0; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Budget Guides</h1>
+    <!-- Header part -->
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="budgetguides.html" aria-current="page">Budget Guides</a></li>
+                <li><a href="about.html">About & Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Headline -->
+        <section class="hero">
+            <div class="hero-inner guide-intro">
+                <div class="hero-text">
+                    <h1>Budget Guides</h1>
+                    <p>Find the spending personality that sounds most like you, then try the budgeting strategy that fits it.</p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="overview">
+            <div class="overview-inner">
+                <h2>Personality Archetypes</h2>
+                <p>Most people are a mix, so do not worry if you don't fit neatly into one category. Pick the one that resonates with you the most.</p>
+                <div class="overview-grid guide-grid">
+                    <article>
+                        <p class="emoji"><img src="C:\Users\User\Documents\pesonality\PesoNality-main\PesoNality-main\imgs\pig.png" alt="Pig Emoji" width="64" height="64"></p>
+
+                        <!-- Spending Archetypes -->
+                        <h3>Saver</h3>
+                        <p>Keeps money aside first and spends what is left. Feels uneasy when the savings number goes down.</p>
+
+                        <h4>You might be a Saver if you:</h4>
+                        <ul>
+                            <li>Check your balance often</li>
+                            <li>Think twice before buying anything non-essential</li>
+                            <li>Sometimes skip things you could actually afford</li>
+                        </ul>
+
+                        <h4>Watch out for:</h4>
+                        <ul>
+                            <li>Missing out on experiences because you are too focused on saving</li>
+                            <li>Feeling guilty about spending money</li>
+                            <li>Not having fun with your money</li>
+                        </ul>
+                        <p><strong>Try: </strong>Pay Yourself First, with a small monthly "fun money" allocation.</p>
+                    </article>
+                    <article>
+                        <p class="emoji"><img src="C:\Users\User\Documents\pesonality\PesoNality-main\PesoNality-main\imgs\online-shopping.png" alt="Shopping Bag Emoji" width="64" height="64"></p>
+
+                        <h3>Spender</h3>
+                        <p>Enjoys spending and treats money as something to use. Savings tend to be whatever is left, which is often nothing.</p>
+
+                        <h4>You might be a Spender if you:</h4>
+                        <ul>
+                            <li>Run out of allowance before the next one arrives</li>
+                            <li>Treat yourself often</li>
+                            <li>Rarely track where your money went</li>
+                        </ul>
+
+                        <h4>Watch out for:</h4>
+                        <ul>
+                            <li>Having no emergency money</li>
+                            <li>Small daily purchases adding up</li>
+                        </ul>
+                        <p><strong>Try: </strong>The 50/30/20 Rule, or the Envelope Method to cap spending</p>
+                    </article>
+                    <article>
+                        <p class="emoji"><img src="C:\Users\User\Documents\pesonality\PesoNality-main\PesoNality-main\imgs\calendar.png" alt="Calendar Emoji" width="64" height="64"></p>
+
+                        <h3>Planner</h3>
+                        <p>Likes lists, schedules, and knowing what money is for before it is spent. Usually has a goal in mind.</p>
+
+                        <h4>You might be a Planner if you:</h4>
+                        <ul>
+                            <li>Have a budget and stick to it</li>
+                            <li>Plan for big purchases</li>
+                            <li>Feel stressed when a plan goes off track</li>
+                        </ul>
+
+                        <h4>Watch out for:</h4>
+                        <ul>
+                            <li>Spending too much time on the plan itself</li>
+                            <li>Not leaving room for surprise expenses</li>
+                        </ul>
+                        <p><strong>Try: </strong>Zero-Based Budgeting by assigning every dollar a job, plus a small buffer for unexpected costs.</p>
+                    </article>
+                    <article>
+                        <p class="emoji"><img src="C:\Users\User\Documents\pesonality\PesoNality-main\PesoNality-main\imgs\lightning.png" alt="Lightning Emoji" width="64" height="64"></p>
+
+                        <h3>Impulse Buyer</h3>
+                        <p>Buys in the moment, usually because of a sale, a trend, or a bad day. Regret tends to show up later.</p>
+
+                        <h4>You might be an Impulse Buyer if you:</h4>
+                        <ul>
+                            <li>Add to cart first and think later</li>
+                            <li>Get tempted by flash sales and online shopping</li>
+                            <li>Have things you bought but barely use</li>
+                        </ul>
+                        <p><strong>Try: </strong>Set a 24-hour waiting period before making non-essential purchases.</p>
+                    </article>
+                </div>
+                <section class="summary">
+
+                    <!-- Summary -->
+                    <h2>Summary</h2>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Archetype</th>
+                                    <th>Characteristics</th>
+                                    <th>Budgeting Strategy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Saver</td>
+                                    <td>Saves first, spends carefully</td>
+                                    <td>Pay Yourself First</td>
+                                </tr>
+                                <tr>
+                                    <td>Spender</td>
+                                    <td>Spends freely, saves little</td>
+                                    <td>50/30/20 Rule or Envelope Method</td>
+                                </tr>
+                                <tr>
+                                    <td>Planner</td>
+                                    <td>Plans every peso ahead of time</td>
+                                    <td>Zero-Based Budgeting</td>
+                                </tr>
+                                <tr>
+                                    <td>Impulse Buyer</td>
+                                    <td>Buys on the spot</td>
+                                    <td>24-Hour Waiting Period</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+
 </body>
 </html>
