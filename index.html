@@ -3,54 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PesoNality - Your Money, your Personality</title>
-
+    <title>PesoNality Your Money, Your Personality</title>
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 6%;
+            background-color: #ffffff;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            font-family: Arial;
+        } .navbar a {
+            display: block;
+            color: #252525;
+            text-decoration: none;
+        } .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+        } .navbar ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        } .navbar li a {
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-size: 15px;
+        } .navbar li a:hover, .navbar li a:focus-visible {
+            background-color: #f2f2f2;
+        } main {
+            color: #173f44;
+            font-family: Arial, sans-serif;
+        } main * {
+            box-sizing: border-box;
+        }
+        main h1,
+        main h2,
+        main h3 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+        } main p {
+            color: #314548;
+            font-size: 16px;
+            line-height: 1.65;
+        } .hero {
+            padding: 48px 7% 0;
+            background-color: #f6dce6;
+            background-image: linear-gradient(
+                to bottom,
+                transparent 84%,
+                #ee7656 84%,
+                #ee7656 90%,
+                #ffffff 90%
+            );
+        } .hero-inner {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            align-items: center;
+            max-width: 1120px;
+            margin: 0 auto;
+        } .hero-text {
+            position: relative;
+            z-index: 1;
+            margin-right: -38px;
+            padding: 36px 40px;
+            background-color: #ffffff;
+            border: 1px solid #91cbbf;
+            box-shadow: 6px 6px 0 #b5dcd1;
+        } .hero h1 {
+            font-size: clamp(36px, 4.3vw, 64px);
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+        } .hero h1 span {
+            color: #b84c34;
+            font-style: italic;
+        } .hero p {
+            max-width: 48ch;
+            margin: 20px 0 24px;
+        } .hero button {
+            padding: 14px 22px;
+            border: 0;
+            background-color: #58bcaa;
+            color: #103c3d;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        } .hero button:hover {
+            background-color: #85d3c3;
+        } .hero button:focus-visible {
+            outline: 3px solid #173f44;
+            outline-offset: 3px;
+        } .hero-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border: 6px solid #ffffff;
+            border-radius: 50%;
+            background-color: #fff2d1;
+        } .overview {
+            padding: 72px 7% 84px;
+            background-color: #ffffff;
+            background-image: radial-gradient(
+                ellipse 180px 85% at left center,
+                #f1cf68 98%,
+                transparent 100%
+            );
+        } .overview-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        } .overview h2 {
+            margin-bottom: 28px;
+            font-size: clamp(36px, 4vw, 54px);
+            letter-spacing: -0.04em;
+        } .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        } .overview article {
+            padding: 28px;
+            border-top: 5px solid #eb7658;
+            background-color: #fbe9ef;
+        } .overview article:nth-child(2) {
+            border-color: #469e8e;
+            background-color: #e3f2ed;
+        } .overview article:nth-child(3) {
+            border-color: #d0a63a;
+            background-color: #fff3d3;
+        } .overview h3 {
+            font-size: 26px;
+            line-height: 1.15;
+        } .overview p {
+            margin: 12px 0 0;
+        }
+        
+    </style>
 </head>
 <body>
-    <! Header part >
     <header>
-        <nav>
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">PesoNality</a>
             <ul>
-                <li><a href="index.html"><button>Home</ button></a></li>
-                <li><a href="budgetguides.html"><button>Budget Guides</button></a></li>
-                <li><a href="about.html"><button>About & Contact</button></a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="budgetguides.html">Budget Guides</a></li>
+                <li><a href="about.html">About &amp; Contact</a></li>
             </ul>
         </nav>
     </header>
-
-    <main> 
-        <! headline part >
-        <section>
-            <h1>PesoNality - Your Money,<br>your Personality</h1>
-            <p>PesoNality is a personal budgeting web guide that helps you understand the connection between your financial decisions and your unique personality traits.</p>
-            <button type="button">Explore Spending Archetypes</button>
-            <div>
-                <img src="https://thumbs.dreamstime.com/b/smart-shopping-budgeting-woman-saving-money-discounts-groceries-second-hand-mindful-spending-lifestyle-personal-finance-464949723.jpg?w=992" alt="Budget Cartoon" width="500" height="300">
-            </div>
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <h1>PesoNality <br>Your Money,<br><span>Your Personality</span></h1>
+                    <p>PesoNality is a personal budgeting web guide that helps you understand the connection between your financial decisions and your unique personality traits.</p>
+                    <button type="button">Explore Spending Archetypes</button>
+                </div>
+                <img class="hero-image"
+                    src="https://thumbs.dreamstime.com/b/smart-shopping-budgeting-woman-saving-money-discounts-groceries-second-hand-mindful-spending-lifestyle-personal-finance-464949723.jpg?w=992"
+                    alt="Budget Cartoon"
+                    width="500"
+                    height="300" >
+                </div>
         </section>
-
-        <section>
-            <h2>Overview</h2>
-            <div> 
-                <article>
-                    <h3>Identify your Personality</h3>
-                    <p>From spending habits and lifestyle choices, we can uncover the unique aspects of your personality that influence your financial behavior.</p>
-                </article>
-
-                <article>
-                    <h3>Customized Strategies</h3>
-                    <p>Budgeting strategies tailored to your spending archetype.</p>
-                </article>
-
-                <article>
-                    <h3>Guide</h3>
-                    <p>wala pa</p>
-                </article>
+        <section class="overview">
+            <div class="overview-inner">
+                <h2>Overview</h2>
+                <div class="overview-grid">
+                    <article>
+                        <h3>Identify your Personality</h3>
+                        <p>From spending habits and lifestyle choices, we can uncover the unique aspects of your personality that influence your financial behavior.</p>
+                    </article>
+                    <article>
+                        <h3>Customized Strategies</h3>
+                        <p>Budgeting strategies tailored to your spending archetype.</p>
+                    </article>
+                    <article>
+                        <h3>Guide</h3>
+                        <p>wala pa</p>
+                    </article>
+                </div>
             </div>
         </section>
     </main>
-
-
 </body>
 </html>
-    
