@@ -11,8 +11,6 @@
             align-items: center;
             padding: 12px 6%;
             background-color: #ffffff;
-            border-radius: 10px 10px 0 0;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
             font-family: Arial;
         } .navbar a {
             display: block;
@@ -31,7 +29,6 @@
             list-style: none;
         } .navbar li a {
             padding: 12px 14px;
-            border-radius: 6px;
             font-size: 15px;
         } .navbar li a:hover, .navbar li a:focus-visible {
             background-color: #f2f2f2;
@@ -53,13 +50,7 @@
         } .hero {
             padding: 48px 7% 0;
             background-color: #f6dce6;
-            background-image: linear-gradient(
-                to bottom,
-                transparent 84%,
-                #ee7656 84%,
-                #ee7656 90%,
-                #ffffff 90%
-            );
+            background-image: linear-gradient(to bottom, transparent 84%, #ee7656 84%, #ee7656 90%, #ffffff 90%);
         } .hero-inner {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
@@ -73,7 +64,6 @@
             padding: 36px 40px;
             background-color: #ffffff;
             border: 1px solid #91cbbf;
-            box-shadow: 6px 6px 0 #b5dcd1;
         } .hero h1 {
             font-size: clamp(36px, 4.3vw, 64px);
             line-height: 1.05;
@@ -155,8 +145,11 @@
         } .explore-button:focus-visible {
             outline: 3px solid #173f44;
             outline-offset: 3px;
+        } .site-footer {
+            flex-direction: column;
+            gap: 6px;
+            color: #252525;
         }
-        
     </style>
 </head>
 <body>
@@ -204,5 +197,11 @@
             </div>
         </section>
     </main>
+    <footer>
+    <nav class="navbar site-footer" aria-label="Footer">
+        <small>&copy; CS 1105 - PesoNality</small>
+        </ul>
+    </nav>
+</footer>
 </body>
 </html>
