@@ -4,8 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About & Contact</title>
+    <style>
+        /* Navigation bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 6%;
+            background-color: #ffffff;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            font-family: Arial;
+        }
+
+        .navbar a {
+            display: block;
+            color: #252525;
+            text-decoration: none;
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .navbar li a {
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .navbar li a:hover,
+        .navbar li a:focus-visible {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h1>About & Contact</h1>
+    <!-- Header part -->
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">PesoNality</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="budgetguides.html" aria-current="page">Budget Guides</a></li>
+                <li><a href="about.html">About & Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>About & Contact</h1>
+    </main>
 </body>
 </html>
