@@ -117,51 +117,23 @@
             font-style: italic;
             font-size: 13px;
             margin-top: 14px;
-        }
-
-
-        @media (max-width: 800px) {
-
-            .team {
-                grid-template-columns: 1fr;
-            }
-
-            .member {
-                grid-template-columns: 160px 1fr;
-            }
-
-            .member img {
-                width: 160px;
-                height: 160px;
-            }
-        }
-
-        @media (max-width: 550px) {
-
-            .navbar ul {
-                gap: 3px;
-            }
-
-            .navbar a {
-                font-size: 13px;
-                padding: 8px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .member {
-                display: block;
-            }
-
-            .member img {
-                width: 150px;
-                height: 150px;
-                display: block;
-                margin-bottom: 20px;
-            }
-        }
+        } 
+        
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+            linear-gradient(
+                to bottom,
+                #f6dce6 230px,
+                #ee7656 230px 242px,
+                transparent 242px ),
+                radial-gradient(
+                    ellipse min(12vw, 150px) 48% at left 75%,
+                    #f1cf68 98%,
+                    transparent 100%
+                    ) #fff;
+}
 
     </style>
 </head>
