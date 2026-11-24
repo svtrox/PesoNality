@@ -49,22 +49,6 @@
             background-color: #f2f2f2;
         }
 
-        @media (max-width: 600px) {
-            .navbar {
-                flex-direction: column;
-                gap: 8px;
-                padding: 14px 8px 8px;
-            }
-
-            .navbar ul {
-                gap: 2px;
-            }
-
-            .navbar li a {
-                padding: 12px 8px;
-            }
-        }
-
         /* Homepage content */
         main {
             color: #173f44;
@@ -219,39 +203,6 @@
             margin: 12px 0 0;
         }
 
-        /* Homepage layout for smaller screens */
-        @media (max-width: 760px) {
-            .hero {
-                padding: 28px 6% 0;
-            }
-
-            .hero-inner {
-                grid-template-columns: 1fr;
-                justify-items: center;
-            }
-
-            .hero-image {
-                grid-column: 1;
-                grid-row: 1;
-                width: min(82%, 320px);
-            }
-
-            .hero-text {
-                width: 100%;
-                max-width: 520px;
-                margin: -24px 0 0;
-                padding: 28px 24px;
-            }
-
-            .overview {
-                padding: 52px 6%;
-            }
-
-            .overview-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-        }
     </style>
 
     <style>
@@ -267,14 +218,8 @@
         .summary table { width: 100%; border-collapse: collapse; background-color: white; }
         .summary th, .summary td { text-align: left; padding: 14px; border-bottom: 1px solid #91cbbf; }
         .summary th { background-color: #e3f2ed; }
-        @media (max-width: 760px) {
-            .guide-grid { grid-template-columns: 1fr; }
-            .summary th, .summary td { padding: 10px 6px; }
-        }
-        @media (max-width: 600px) {
-            .navbar ul { margin-left: 0; }
-        }
     </style>
+        
 </head>
 <body>
     <!-- Header part -->
