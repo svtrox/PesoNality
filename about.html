@@ -6,6 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>About & Contact | PesoNality</title>
      <style>
+        a {
+  background: seagreen;
+  color: palegreen;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* eto ung animation kapag ginalaw ung cursor sa may button*/
+a:hover {
+  background: lightgreen;
+  transform: translateY(-3px);
+}
+
+/* etong part is kapag ndi clinick ung button, rerevert sya sa size nya*/
+a:focus-visible {
+  background: #0039cb;
+  transform: translateY(-3px);
+  outline: 2px solid #2962ff;
+  outline-offset: 2px;
+}
 
         .navbar {
         display: flex;
